@@ -1,5 +1,6 @@
 import pandas as pd
 
+#extrapolating the data from the csv files and formatting yappidi yap
 
 drivers = pd.read_csv('drivers.csv', usecols=['driverId', 'forename', 'surname'])
 results = pd.read_csv('results.csv', usecols=['driverId', 'position'])
@@ -47,7 +48,7 @@ filtrati = media_df[
     media_df['surname'].str.lower().isin(nomi_input)
 ]
 
-# Stampa i risultati
+# print results 
 if not filtrati.empty:
     print("\nPosizioni medie dei piloti inseriti:")
     print(filtrati[['forename', 'surname', 'media_posizione']])
